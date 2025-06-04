@@ -11,30 +11,33 @@ namespace Models
         public int Stock { get; set; }
     }
 }
-//(Similares para Cliente.cs y Pedido.cs)
-public class Cliente
-{
-     public class Producto
-    {
-       public int Id { get; set; }
-       public string NombreCompleto { get; set; }
-        public string Email { get; set; }
 
-      }
+//(Similares para Cliente.cs y Pedido.cs)
+namespace Models
+{
+    public class Cliente
+    {
+        public int Id { get; set; }
+        public string NombreCompleto { get; set; }
+        public string Email { get; set; }
+    }
 }
 
-public class Pedido
-{
-      public class Producto
-    {
+// models/Pedido
+using System;
+using System.Collections.Generic;
 
+namespace Models
+{
+    public class Pedido
+    {
+        public int Id { get; set; }
         public Cliente Cliente { get; set; }
         public List<Producto> Productos { get; set; }
         public DateTime Fecha { get; set; }
-
-    
-      }
+    }
 }
+
 //Vista
 //View/ProductView.cs
 using Models;
@@ -67,6 +70,7 @@ namespace Views
     }
 }
 
+
 //view/Cliente
 using Models;
 using System;
@@ -94,6 +98,7 @@ namespace Views
         }
     }
 }
+
 //View/Pedido.cs
 using Models;
 using System;
@@ -120,6 +125,7 @@ namespace Views
         }
     }
 }
+
 //Controllers/Producto.cs
 using Models;
 using System.Collections.Generic;
@@ -148,6 +154,7 @@ namespace Controllers
         }
     }
 }
+
 //Controllers/Cliente.cs
 using Models;
 using System.Collections.Generic;
@@ -176,6 +183,7 @@ namespace Controllers
         }
     }
 }
+
 //Controllers/Pedido
 using Models;
 using System;
@@ -206,6 +214,7 @@ namespace Controllers
         }
     }
 }
+
 
 //Programs.cs
 using Controllers;
@@ -301,4 +310,3 @@ class Program
         } while (opcion != 0);
     }
 }
-
